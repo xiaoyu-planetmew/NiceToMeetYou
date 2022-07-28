@@ -72,7 +72,7 @@ public class DialogSys : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                DialogSys.Instance.dialogNext();
+                //DialogSys.Instance.dialogNext();
                 //SoundController.Instance.Button_Off.HandleEvent(gameObject);
             }
 
