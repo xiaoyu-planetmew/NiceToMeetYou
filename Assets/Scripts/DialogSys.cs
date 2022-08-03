@@ -93,6 +93,7 @@ public class DialogSys : MonoBehaviour
     {
         //if (!isTalking)
         //{
+            index = 0;
             GetTextFromFile(textfiles[Num]);
             GetTextFromFileEN(textfilesEN[Num]);
             eventNum = Num;
@@ -103,7 +104,7 @@ public class DialogSys : MonoBehaviour
     {
         if (textFinished)
         {
-            if (index == textList.Count)
+            if (index >= textList.Count)
             {
                 index = 0;
                 //SoundController.Instance.Talk_Radio_Stop.HandleEvent(gameObject);
@@ -127,9 +128,27 @@ public class DialogSys : MonoBehaviour
             }
         }
     }
+    public void dialogFinish()
+    {
+        textList.Clear();
+        textListEN.Clear();
+        textTalker.Clear();
+        textFinished = true;
+        isTalking = false;
+        index = 0;
+        //SoundController.Instance.Talk_Radio_Stop.HandleEvent(gameObject);
+        textBackground.gameObject.SetActive(false);
+        //nextPageButton.gameObject.SetActive(false);
+
+        //textLabelcn.gameObject.SetActive(false);
+        //textLabelen.gameObject.SetActive(false);
+        isTalking = false;
+        //afterDialogEvents[eventNum].Invoke();
+    }
     void GetTextFromFile(TextAsset file)
     {
         textList.Clear();
+        
         textTalker.Clear();
         var lineData = file.text.Split('#');
         foreach (var line in lineData)
@@ -345,4 +364,5 @@ public class DialogSys : MonoBehaviour
 
         //StartCoroutine(audioChangeRight());
     }
+    
 }

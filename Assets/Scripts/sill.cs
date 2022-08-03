@@ -21,7 +21,7 @@ public class sill : MonoBehaviour
     {
         AnimatorStateInfo stateinfo = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
 
-        if (stateinfo.IsName("appear1") && (stateinfo.normalizedTime >= 1.0f))
+        if ((stateinfo.IsName("appear1") && (stateinfo.normalizedTime >= 1.0f)) || (stateinfo.IsName("loop1")))
         {
             //this.GetComponent<BoxCollider2D>().enabled = true;
             button.enabled = true;

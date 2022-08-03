@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class tiezhi : MonoBehaviour
 {
@@ -18,7 +19,12 @@ public class tiezhi : MonoBehaviour
     public GameObject tag2Under;
     public GameObject tag3Under;
     public GameObject tag4Under;
-    public int tagOpen;
+    public int tagOpen = 0;
+    public bool finish = false;
+    public UnityEvent afterEvent;
+    public UnityEvent afterEvent1;
+    public UnityEvent afterEvent2;
+    public GameObject bigTag;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +34,51 @@ public class tiezhi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(tagOpen >= 4 && !finish)
+        {
+            finish = true;
+            tag1.SetActive(false);
+            tag2.SetActive(false);
+            tag3.SetActive(false);
+            tag4.SetActive(false);
+            tag1Ani.SetActive(false);
+            tag2Ani.SetActive(false);
+            tag3Ani.SetActive(false);
+            tag4Ani.SetActive(false);
+            //tag1Under.SetActive(false);
+            //tag2Under.SetActive(false);
+            //tag3Under.SetActive(false);
+            //tag4Under.SetActive(false);
+            //this.gameObject.GetComponent<Image>().enabled = false;
+            bigTag.SetActive(true);
+            bigTag.GetComponent<Animator>().SetTrigger("appear");
+            DialogSys.Instance.dialogNext();
+            DialogSys.Instance.isTalking = false;
+            afterEvent.Invoke();
+            StartCoroutine(autoDialog());
+        }
+        if (bigTag.activeInHierarchy) { 
+        AnimatorStateInfo stateinfo = bigTag.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+
+        if (stateinfo.IsName("bigTagLoop"))
+        {
+            bigTag.transform.Find("Button").gameObject.SetActive(true);
+        }
+        else
+        {
+            bigTag.transform.Find("Button").gameObject.SetActive(false);
+        }
+        if(stateinfo.IsName("bigTagOpen") && stateinfo.normalizedTime >= 1.0f)
+        {
+            afterEvent1.Invoke();
+        }
+        }
+    }
+    IEnumerator autoDialog()
+    {
+        yield return new WaitForSeconds(3f);
+        DialogSys.Instance.dialogNext();
+        bigTag.transform.Find("Button").gameObject.SetActive(true);
     }
     public void appear()
     {
@@ -57,5 +107,19 @@ public class tiezhi : MonoBehaviour
             tag4.transform.GetChild(0).gameObject.SetActive(true);
             tag4Under.gameObject.SetActive(true);
         });
+    }
+    public void bigTagOpen()
+    {
+        StartCoroutine(aniDisappear());
+    }
+    IEnumerator aniDisappear()
+    {
+        yield return new WaitForSeconds(0.35f);
+        tag1Under.SetActive(false);
+        tag2Under.SetActive(false);
+        tag3Under.SetActive(false);
+        tag4Under.SetActive(false);
+        this.gameObject.GetComponent<Image>().enabled = false;
+        afterEvent2.Invoke();
     }
 }
