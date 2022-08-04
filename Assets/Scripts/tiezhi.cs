@@ -25,6 +25,7 @@ public class tiezhi : MonoBehaviour
     public UnityEvent afterEvent1;
     public UnityEvent afterEvent2;
     public GameObject bigTag;
+    public GameObject meditation;
     // Start is called before the first frame update
     void Start()
     {
@@ -82,6 +83,9 @@ public class tiezhi : MonoBehaviour
     }
     public void appear()
     {
+        meditation.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
+            meditation.SetActive(false);
+        });
         this.gameObject.GetComponent<Image>().DOFade(1, 2);
         tag1Ani.GetComponent<Image>().DOFade(1, 2).OnComplete(() =>
         {

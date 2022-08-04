@@ -8,6 +8,7 @@ public class startButton : MonoBehaviour, IPointerClickHandler
 {
     public GameObject logo;
     public Sprite start2;
+    public GameObject meditation;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,7 @@ public class startButton : MonoBehaviour, IPointerClickHandler
         {
             DialogSys.Instance.dialogStart(0);
             this.gameObject.SetActive(false);
+            meditation.SetActive(true);
         }));
         this.GetComponent<startButton>().enabled = false;
     }

@@ -24,6 +24,7 @@ public class WeatherChoose : MonoBehaviour
     public Sprite yu2;
     public bool day;
     public int weather;
+    public GameObject meditation;
     // Start is called before the first frame update
     void Start()
     {
@@ -124,7 +125,8 @@ public class WeatherChoose : MonoBehaviour
         });
         queren.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
             queren.GetComponent<Button>().enabled = false;
-            
+            meditation.SetActive(true);
+            meditation.GetComponent<Image>().DOFade(1, 2);
         });
         this.gameObject.SetActive(false);
     }

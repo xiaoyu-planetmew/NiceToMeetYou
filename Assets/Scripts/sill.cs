@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using DG.Tweening;
 
 public class sill : MonoBehaviour
 {
     public Button button;
     public GameObject weather;
+    public GameObject meditation;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +36,15 @@ public class sill : MonoBehaviour
             weather.GetComponent<WeatherChoose>().appear();
         }
     }
+    public void meditationDisappear()
+    {
+        meditation.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
+            meditation.SetActive(false);
+        });
+    }
     public void appear2()
     {
+        
         AnimatorStateInfo stateinfo = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
 
         if (stateinfo.IsName("loop1"))

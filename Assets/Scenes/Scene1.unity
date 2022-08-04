@@ -1414,6 +1414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logo: {fileID: 441291102}
   start2: {fileID: 21300000, guid: e20ede03f3fddf74c8dc4051134fc3b8, type: 3}
+  meditation: {fileID: 531013070}
 --- !u!61 &262659797
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2780,6 +2781,101 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508536276}
   m_CullTransparentMesh: 1
+--- !u!1 &531013070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 531013071}
+  - component: {fileID: 531013074}
+  - component: {fileID: 531013073}
+  - component: {fileID: 531013072}
+  m_Layer: 5
+  m_Name: meditation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &531013071
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531013070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 792807873}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 324, y: 285}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &531013072
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531013070}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b8111154f5162cb4b901386a6c160cec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &531013073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531013070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f081076cd06680741ab658558bc4abce, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &531013074
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531013070}
+  m_CullTransparentMesh: 1
 --- !u!1 &603788355
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,6 +4004,7 @@ RectTransform:
   - {fileID: 1402494196}
   - {fileID: 1168125489}
   - {fileID: 497781779}
+  - {fileID: 531013071}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4248,6 +4345,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: appear1
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1764461911}
+        m_TargetAssemblyTypeName: sill, Assembly-CSharp
+        m_MethodName: meditationDisappear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &823017217
@@ -4953,6 +5062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logo: {fileID: 0}
   start2: {fileID: 0}
+  meditation: {fileID: 0}
 --- !u!95 &1024889780
 Animator:
   serializedVersion: 3
@@ -6362,6 +6472,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   bigTag: {fileID: 814019544}
+  meditation: {fileID: 531013070}
 --- !u!1 &1225875856
 GameObject:
   m_ObjectHideFlags: 0
@@ -7551,6 +7662,18 @@ MonoBehaviour:
           m_StringArgument: appear1
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1764461911}
+        m_TargetAssemblyTypeName: sill, Assembly-CSharp
+        m_MethodName: meditationDisappear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1578415614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7983,6 +8106,7 @@ MonoBehaviour:
   yu2: {fileID: 21300000, guid: be1a81b4e9d84b34bacb1c6daf16180b, type: 3}
   day: 1
   weather: 0
+  meditation: {fileID: 531013070}
 --- !u!1 &1704637448
 GameObject:
   m_ObjectHideFlags: 0
@@ -8754,6 +8878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1657007479}
   weather: {fileID: 1678995696}
+  meditation: {fileID: 531013070}
 --- !u!1 &1795237680
 GameObject:
   m_ObjectHideFlags: 0
