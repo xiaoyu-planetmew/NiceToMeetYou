@@ -8,6 +8,8 @@ using DG.Tweening;
 public class choose2 : MonoBehaviour
 {
     public GameObject queren;
+
+    public List<GameObject> anis = new List<GameObject>();
     public List<GameObject> buttons = new List<GameObject>();
     public Sprite normal;
     public Sprite highlight;
@@ -16,7 +18,7 @@ public class choose2 : MonoBehaviour
     public UnityEvent lessThan3;
     public UnityEvent finish;
     public List<Transform> locations = new List<Transform>();
-    // Start is called before the first frame update
+     // Start is called before the first frame update
     void Start()
     {
         
@@ -61,14 +63,31 @@ public class choose2 : MonoBehaviour
         foreach(GameObject obj in buttons)
         {
             obj.GetComponent<Button>().enabled = false;
-            obj.transform.GetChild(0).gameObject.GetComponent<Image>().DOFade(0, 2);
+            foreach(var ani in anis)
+            {
+                ani.GetComponent<Image>().DOFade(0, 2);
+            }
             queren.GetComponent<Button>().enabled = false;
+            queren.GetComponent<Image>().DOFade(0, 2);
             obj.GetComponent<Image>().DOFade(0, 2).OnComplete(() =>
             {
+                queren.SetActive(false);
                 obj.SetActive(false);
                 for(int i=0; i<actObjs.Count; i++)
                 {
-                    //actObjs[i].Rect = locations[i].transform;
+                    actObjs[i].SetActive(true);
+                    actObjs[i].transform.position = locations[i].transform.position;
+                    actObjs[i].GetComponent<choose2Button>().ani.transform.position = locations[i].transform.position;
+                    actObjs[i].GetComponent<choose2Button>().enabled = false;
+                    actObjs[i].GetComponent<Image>().sprite = normal;
+                    actObjs[i].GetComponent<Image>().DOFade(1, 2);
+                    actObjs[i].GetComponent<choose2Button>().ani.GetComponent<Image>().DOFade(1, 2).OnComplete(() => {
+                        Debug.Log("1");
+                        foreach(var obj in anis)
+                        {
+                            obj.GetComponent<Animator>().SetTrigger("trans");
+                        }
+                    });
                 }
             });
         }

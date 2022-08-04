@@ -50,6 +50,7 @@ public class startButton : MonoBehaviour, IPointerClickHandler
             DialogSys.Instance.dialogStart(0);
             this.gameObject.SetActive(false);
         }));
+        this.GetComponent<startButton>().enabled = false;
     }
     void startSequence()
     {

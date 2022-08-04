@@ -36,7 +36,7 @@ public class DialogSys : MonoBehaviour
     public float textSpeed;
     public List<AudioClip> leftAudio = new List<AudioClip>();
     public List<AudioClip> rightAudio = new List<AudioClip>();
-    bool textFinished;
+    [SerializeField]bool textFinished;
     public string output;
     int textNum;
     // Start is called before the first frame update

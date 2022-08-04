@@ -9,6 +9,7 @@ public class choose2Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public Sprite highlight;
     public bool acted;
     public bool inButton;
+    public GameObject ani;
     // Start is called before the first frame update
     void Start()
     {
