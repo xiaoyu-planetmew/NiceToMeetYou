@@ -39,6 +39,8 @@ public class DialogSys : MonoBehaviour
     [SerializeField]bool textFinished;
     public string output;
     int textNum;
+    public GameObject nextButton;
+    public GameObject meditation;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -99,6 +101,17 @@ public class DialogSys : MonoBehaviour
             eventNum = Num;
             fileChoose();
         //}
+    }
+    public void nextButtonAct(bool act)
+    {
+        if(act)
+        {
+            nextButton.GetComponent<Button>().enabled = true;
+        }
+        else
+        {
+            nextButton.GetComponent<Button>().enabled = false;
+        }
     }
     public void dialogNext()
     {
@@ -364,5 +377,15 @@ public class DialogSys : MonoBehaviour
 
         //StartCoroutine(audioChangeRight());
     }
-    
+    public void meditationAppear()
+    {
+        meditation.SetActive(true);
+        meditation.GetComponent<Image>().DOFade(1, 2);
+    }
+    public void meditationDisappear()
+    {
+        meditation.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
+            meditation.SetActive(false);
+        });
+    }
 }

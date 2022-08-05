@@ -39,6 +39,24 @@ public class choose2 : MonoBehaviour
             }
         }
     }
+    public void choose2Act()
+    {
+        
+        this.gameObject.SetActive(true);
+        foreach(var ani in anis)
+        {
+            ani.gameObject.GetComponent<Image>().DOFade(1, 2);
+        }
+        foreach(var b in buttons)
+        {
+            b.gameObject.GetComponent<Image>().DOFade(1, 2);
+        }
+        queren.gameObject.GetComponent<Image>().DOFade(1, 3).OnComplete(() => {
+            Debug.Log("1");
+            DialogSys.Instance.dialogNext();
+            queren.gameObject.GetComponent<Button>().enabled = true;
+        });
+    }
     public void buttonPressed(GameObject obj)
     {
         int index = 0;
@@ -60,37 +78,49 @@ public class choose2 : MonoBehaviour
     }
     public void finishQueren()
     {
-        foreach(GameObject obj in buttons)
+        foreach(var act in actObjs)
         {
-            obj.GetComponent<Button>().enabled = false;
-            foreach(var ani in anis)
+            if (act == null)
             {
-                ani.GetComponent<Image>().DOFade(0, 2);
+                DialogSys.Instance.dialogStart(21);
+                return;
             }
-            queren.GetComponent<Button>().enabled = false;
-            queren.GetComponent<Image>().DOFade(0, 2);
-            obj.GetComponent<Image>().DOFade(0, 2).OnComplete(() =>
-            {
-                queren.SetActive(false);
-                obj.SetActive(false);
-                for(int i=0; i<actObjs.Count; i++)
-                {
-                    actObjs[i].SetActive(true);
-                    actObjs[i].transform.position = locations[i].transform.position;
-                    actObjs[i].GetComponent<choose2Button>().ani.transform.position = locations[i].transform.position;
-                    actObjs[i].GetComponent<choose2Button>().enabled = false;
-                    actObjs[i].GetComponent<Image>().sprite = normal;
-                    actObjs[i].GetComponent<Image>().DOFade(1, 2);
-                    actObjs[i].GetComponent<choose2Button>().ani.GetComponent<Image>().DOFade(1, 2).OnComplete(() => {
-                        Debug.Log("1");
-                        foreach(var obj in anis)
-                        {
-                            obj.GetComponent<Animator>().SetTrigger("trans");
-                        }
-                    });
-                }
-            });
         }
+            foreach (GameObject obj in buttons)
+            {
+                obj.GetComponent<Button>().enabled = false;
+                foreach (var ani in anis)
+                {
+                    ani.GetComponent<Image>().DOFade(0, 2);
+                }
+                queren.GetComponent<Button>().enabled = false;
+                queren.GetComponent<Image>().DOFade(0, 2);
+                obj.GetComponent<Image>().DOFade(0, 2).OnComplete(() =>
+                {
+                    DialogSys.Instance.dialogStart(22);
+                    queren.SetActive(false);
+                    obj.SetActive(false);
+                    for (int i = 0; i < actObjs.Count; i++)
+                    {
+                        actObjs[i].SetActive(true);
+                        actObjs[i].transform.position = locations[i].transform.position;
+                        actObjs[i].GetComponent<choose2Button>().ani.transform.position = locations[i].transform.position;
+                        actObjs[i].GetComponent<choose2Button>().enabled = false;
+                        actObjs[i].GetComponent<Image>().sprite = normal;
+                        actObjs[i].GetComponent<Image>().DOFade(1, 2);
+                        actObjs[i].GetComponent<choose2Button>().ani.GetComponent<Image>().DOFade(1, 2).OnComplete(() =>
+                        {
+                            //Debug.Log("1");
+                            foreach (var obj in actObjs)
+                            {
+                                //obj.GetComponent<Animator>().SetTrigger("trans");
+                                obj.GetComponent<Button>().enabled = true;
+                            }
+                        });
+                    }
+                });
+            }
+        
     }
     public bool CustomContains(List<GameObject> list, GameObject t)
     {

@@ -13,7 +13,8 @@ public class tiezhi2 : MonoBehaviour
     public GameObject tag3;
     public GameObject tag4;
     public int tagOpen = 0;
-    //bool start = false;
+    bool finished = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,11 @@ public class tiezhi2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(tagOpen >= 4 && !finished)
+        {
+            finished = true;
+            disappear();
+        }
     }
     public void appear()
     {
@@ -54,5 +59,20 @@ public class tiezhi2 : MonoBehaviour
     {
         obj.GetComponent<Animator>().SetTrigger("loop");
         tagOpen++;
+    }
+    public void disappear()
+    {
+        DialogSys.Instance.dialogFinish();
+        dikuang.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
+            DialogSys.Instance.meditationAppear();
+            DialogSys.Instance.dialogStart(18);
+            DialogSys.Instance.nextButtonAct(true);
+            this.gameObject.SetActive(false);
+        }
+        );
+        tag1.GetComponent<Image>().DOFade(0, 2);
+        tag2.GetComponent<Image>().DOFade(0, 2);
+        tag3.GetComponent<Image>().DOFade(0, 2);
+        tag4.GetComponent<Image>().DOFade(0, 2);
     }
 }
