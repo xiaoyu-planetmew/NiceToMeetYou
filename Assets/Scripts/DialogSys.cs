@@ -321,6 +321,7 @@ public class DialogSys : MonoBehaviour
         {
             index = index + 1;
             textFinished = true;
+            Debug.Log("1");
         });
     }
     /*

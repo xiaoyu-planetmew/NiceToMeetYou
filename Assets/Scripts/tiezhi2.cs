@@ -62,6 +62,11 @@ public class tiezhi2 : MonoBehaviour
     }
     public void disappear()
     {
+        StartCoroutine(disappearDelay());
+    }
+    IEnumerator disappearDelay()
+    {
+        yield return new WaitForSeconds(2.5f);
         DialogSys.Instance.dialogFinish();
         dikuang.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
             DialogSys.Instance.meditationAppear();

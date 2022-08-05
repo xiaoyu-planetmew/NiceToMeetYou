@@ -18,10 +18,14 @@ public class choose2 : MonoBehaviour
     public UnityEvent lessThan3;
     public UnityEvent finish;
     public List<Transform> locations = new List<Transform>();
+    public GameObject snap;
+    public GameObject finishButton;
+    [SerializeField] int r;
      // Start is called before the first frame update
     void Start()
     {
-        
+
+        r = Random.Range(0, 2);
     }
 
     // Update is called once per frame
@@ -52,7 +56,7 @@ public class choose2 : MonoBehaviour
             b.gameObject.GetComponent<Image>().DOFade(1, 2);
         }
         queren.gameObject.GetComponent<Image>().DOFade(1, 3).OnComplete(() => {
-            Debug.Log("1");
+            //Debug.Log("1");
             DialogSys.Instance.dialogNext();
             queren.gameObject.GetComponent<Button>().enabled = true;
         });
@@ -97,7 +101,7 @@ public class choose2 : MonoBehaviour
                 queren.GetComponent<Image>().DOFade(0, 2);
                 obj.GetComponent<Image>().DOFade(0, 2).OnComplete(() =>
                 {
-                    DialogSys.Instance.dialogStart(22);
+                    //DialogSys.Instance.dialogStart(22);
                     queren.SetActive(false);
                     obj.SetActive(false);
                     for (int i = 0; i < actObjs.Count; i++)
@@ -110,17 +114,100 @@ public class choose2 : MonoBehaviour
                         actObjs[i].GetComponent<Image>().DOFade(1, 2);
                         actObjs[i].GetComponent<choose2Button>().ani.GetComponent<Image>().DOFade(1, 2).OnComplete(() =>
                         {
+                            
+                            
                             //Debug.Log("1");
                             foreach (var obj in actObjs)
                             {
                                 //obj.GetComponent<Animator>().SetTrigger("trans");
-                                obj.GetComponent<Button>().enabled = true;
+                                //obj.GetComponent<Button>().enabled = true;
                             }
                         });
                     }
                 });
             }
+        StartCoroutine(finishQuerenDelay());
         
+    }
+    IEnumerator finishQuerenDelay()
+    {
+        yield return new WaitForSeconds(4f);
+        if (r == 0)
+        {
+            DialogSys.Instance.dialogStart(22);
+            StartCoroutine(dialogDelay());
+        }
+        if (r == 1)
+        {
+            DialogSys.Instance.dialogStart(24);
+            StartCoroutine(dialogDelay());
+        }
+        StartCoroutine(snapAppear());
+    }
+    IEnumerator dialogDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        Debug.Log("2");
+        DialogSys.Instance.dialogNext();
+    }
+    IEnumerator snapAppear()
+    {
+        yield return new WaitForSeconds(3f);
+        snap.SetActive(true);
+        snap.GetComponent<Image>().DOFade(1, 2).OnComplete(() => {
+            snap.GetComponent<Button>().enabled = true;
+        });
+    }
+    public void snapButton()
+    {
+        snap.GetComponent<Button>().enabled = false;
+        snap.GetComponent<Image>().DOFade(0, 2).OnComplete(() =>
+        {
+            snap.SetActive(false);
+        });
+        foreach(var obj in actObjs)
+        {
+            obj.GetComponent<choose2Button>().ani.GetComponent<Animator>().SetTrigger("trans");
+        }
+        if(r == 0)
+        {
+            DialogSys.Instance.dialogStart(23);
+            StartCoroutine(dialogDelay());
+        }
+        if (r == 1)
+        {
+            DialogSys.Instance.dialogStart(25);
+            StartCoroutine(dialogDelay());
+        }
+        StartCoroutine(finishButtonDelay());
+    }
+    IEnumerator finishButtonDelay()
+    {
+        yield return new WaitForSeconds(6f);
+        finishButton.SetActive(true);
+    }
+    public void choose2Disappear()
+    {
+        foreach(var obj in actObjs)
+        {
+            obj.GetComponent<Image>().DOFade(0, 2).OnComplete(() =>
+            {
+                obj.SetActive(false);
+            });
+        }
+        foreach(var ani in anis)
+        {
+            ani.GetComponent<Image>().DOFade(0, 2).OnComplete(() =>
+            {
+                ani.SetActive(false);
+            });
+        }
+        finishButton.GetComponent<Image>().DOFade(0, 2).OnComplete(() =>
+        {
+            finishButton.SetActive(false);
+            DialogSys.Instance.dialogFinish();
+            this.gameObject.SetActive(false);
+        });
     }
     public bool CustomContains(List<GameObject> list, GameObject t)
     {
