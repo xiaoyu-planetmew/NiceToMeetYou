@@ -127,7 +127,7 @@ public class choose2 : MonoBehaviour
                 });
             }
         StartCoroutine(finishQuerenDelay());
-        
+        DialogSys.Instance.nextButtonAct(false);
     }
     IEnumerator finishQuerenDelay()
     {
@@ -202,11 +202,15 @@ public class choose2 : MonoBehaviour
                 ani.SetActive(false);
             });
         }
+        DialogSys.Instance.textLabel.GetComponent<Text>().DOFade(0, 2);
+        DialogSys.Instance.textLabelEN.GetComponent<Text>().DOFade(0, 2);
         finishButton.GetComponent<Image>().DOFade(0, 2).OnComplete(() =>
         {
             finishButton.SetActive(false);
+            //DialogSys.Instance.textLabel.GetComponent<Text>().color = new Color32(255, 255, 255, 255);
             DialogSys.Instance.dialogFinish();
             this.gameObject.SetActive(false);
+            DialogSys.Instance.afterDialogEvents[25].Invoke();
         });
     }
     public bool CustomContains(List<GameObject> list, GameObject t)

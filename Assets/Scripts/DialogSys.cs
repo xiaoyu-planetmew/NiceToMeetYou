@@ -158,6 +158,13 @@ public class DialogSys : MonoBehaviour
         isTalking = false;
         //afterDialogEvents[eventNum].Invoke();
     }
+    public void dialogDisappear()
+    {
+        textLabel.GetComponent<Text>().DOFade(0, 2);
+        textLabelEN.GetComponent<Text>().DOFade(0, 2).OnComplete(() => {
+            dialogFinish();
+        });
+    }
     void GetTextFromFile(TextAsset file)
     {
         textList.Clear();
@@ -313,9 +320,9 @@ public class DialogSys : MonoBehaviour
     {
         textFinished = false;
         textLabel.GetComponent<Text>().text = textList[index];
-        textLabel.GetComponent<Text>().color = new Vector4(0, 0, 0, 0);
+        textLabel.GetComponent<Text>().color = new Color32(50, 50, 50, 0);
         textLabelEN.GetComponent<Text>().text = textListEN[index];
-        textLabelEN.GetComponent<Text>().color = new Vector4(0, 0, 0, 0);
+        textLabelEN.GetComponent<Text>().color = new Color32(50, 50, 50, 0);
         textLabelEN.GetComponent<Text>().DOFade(1, 2);
         textLabel.GetComponent<Text>().DOFade(1, 2).OnComplete(() =>
         {

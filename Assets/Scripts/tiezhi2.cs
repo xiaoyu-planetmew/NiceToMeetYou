@@ -35,6 +35,7 @@ public class tiezhi2 : MonoBehaviour
         //this.GetComponent<Image>().enabled = true;
         //this.GetComponent<Animator>().SetTrigger("appear");
         //start = true;
+        this.gameObject.SetActive(true);
         tagShow();
     }
     public void tagShow()
