@@ -161,10 +161,7 @@ public class choose2 : MonoBehaviour
     public void snapButton()
     {
         snap.GetComponent<Button>().enabled = false;
-        snap.GetComponent<Image>().DOFade(0, 2).OnComplete(() =>
-        {
-            snap.SetActive(false);
-        });
+        StartCoroutine(snapButtonDelay());
         foreach(var obj in actObjs)
         {
             obj.GetComponent<choose2Button>().ani.GetComponent<Animator>().SetTrigger("trans");
@@ -180,6 +177,14 @@ public class choose2 : MonoBehaviour
             StartCoroutine(dialogDelay());
         }
         StartCoroutine(finishButtonDelay());
+    }
+    IEnumerator snapButtonDelay()
+    {
+        yield return new WaitForSeconds(0.4f);
+        snap.GetComponent<Image>().DOFade(0, 2).OnComplete(() =>
+        {
+            snap.SetActive(false);
+        });
     }
     IEnumerator finishButtonDelay()
     {
