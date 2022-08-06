@@ -72,6 +72,7 @@ public class tiezhi2 : MonoBehaviour
         dikuang.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
             DialogSys.Instance.meditationAppear();
             DialogSys.Instance.dialogStart(18);
+            DialogSys.Instance.nextButton.SetActive(true);
             DialogSys.Instance.nextButtonAct(true);
             this.gameObject.SetActive(false);
         }
