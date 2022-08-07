@@ -33,6 +33,7 @@ public class choose3 : MonoBehaviour
     }
     public void choose3Disappear()
     {
+        DialogSys.Instance.dialogDisappear();
         this.transform.GetChild(0).gameObject.GetComponent<Button>().enabled = false;
         this.transform.GetChild(0).gameObject.GetComponent<Button>().enabled = false;
         this.transform.GetChild(0).gameObject.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {

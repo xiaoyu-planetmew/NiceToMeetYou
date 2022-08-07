@@ -14,6 +14,7 @@ public class tiezhi2 : MonoBehaviour
     public GameObject tag4;
     public int tagOpen = 0;
     bool finished = false;
+    public GameObject choose3;
 
     // Start is called before the first frame update
     void Start()
@@ -72,10 +73,11 @@ public class tiezhi2 : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         DialogSys.Instance.dialogFinish();
         dikuang.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
-            DialogSys.Instance.meditationAppear();
+            //DialogSys.Instance.meditationAppear();
             DialogSys.Instance.dialogStart(19);
+            choose3.GetComponent<choose3>().choose3Appear();
             DialogSys.Instance.nextButton.SetActive(true);
-            DialogSys.Instance.nextButtonAct(true);
+            DialogSys.Instance.nextButtonAct(false);
             this.gameObject.SetActive(false);
         }
         );

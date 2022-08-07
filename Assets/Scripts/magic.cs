@@ -14,6 +14,8 @@ public class magic : MonoBehaviour
     public bool mofazhouyuSelected = false;
     public GameObject countDown;
     public UnityEvent afterEvent;
+    public GameObject button;
+    public GameObject zhishi;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +33,42 @@ public class magic : MonoBehaviour
         DialogSys.Instance.dialogStart(27);
         DialogSys.Instance.nextButtonAct(false);
         point.SetActive(true);
+        StartCoroutine(magicAppearDelay());
         point.GetComponent<Image>().DOFade(1, 2).OnComplete(() => {
-            StartCoroutine(mufatuanAppearDelay());
+            
         });
+    }
+    IEnumerator magicAppearDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        DialogSys.Instance.dialogNext();
+        zhishi.SetActive(true);
+        zhishi.GetComponent<Animator>().SetTrigger("appear");
+        button.SetActive(true);
+        button.GetComponent<Image>().DOFade(1, 2).OnComplete(() => {
+            button.GetComponent<Button>().enabled = true;
+        });
+        button.transform.GetChild(0).GetComponent<Text>().DOFade(1, 2);
+    }
+    public void magicAppear2()
+    {
+        DialogSys.Instance.dialogDisappear();
+        button.GetComponent<Button>().enabled = false;
+        zhishi.GetComponent<Animator>().speed = 0;
+        zhishi.GetComponent<Animator>().enabled = false;
+        zhishi.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
+            zhishi.SetActive(false);
+            //StartCoroutine(mufatuanAppearDelay());
+        });
+        button.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
+            button.SetActive(false);
+            mofatuanAppear();
+            //StartCoroutine(mufatuanAppearDelay());
+        });
+        button.transform.GetChild(0).GetComponent<Text>().DOFade(0, 2);
         
+        
+
     }
     public void mofatuanAppear()
     {
@@ -90,6 +124,10 @@ public class magic : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             GameObject obj = mofazhouyu.transform.GetChild(i).gameObject;
+            if (obj.GetComponentsInChildren<Transform>(true).Length > 1)
+            {
+                obj.transform.GetChild(0).gameObject.GetComponent<Text>().DOFade(1, 2);
+            }
             obj.gameObject.GetComponent<Image>().DOFade(1, 2).OnComplete(() => {
                 obj.GetComponent<Button>().enabled = true;
             });
@@ -107,6 +145,10 @@ public class magic : MonoBehaviour
             for (int i = 0; i < 2; i++)
             {
                 GameObject obj = mofazhouyu.transform.GetChild(i).gameObject;
+                if (obj.GetComponentsInChildren<Transform>(true).Length > 1)
+                {
+                    obj.transform.GetChild(0).gameObject.GetComponent<Text>().DOFade(0, 2);
+                }
                 obj.gameObject.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
                     obj.GetComponent<Button>().enabled = false;
                 });
@@ -164,6 +206,11 @@ public class magic : MonoBehaviour
         countDown.SetActive(false);
         setToFlower();
         point.GetComponent<Animator>().SetTrigger("flower");
+        StartCoroutine(flowerDelay());
+    }
+    IEnumerator flowerDelay()
+    {
+        yield return new WaitForSeconds(2f);
         DialogSys.Instance.dialogStart(32);
         DialogSys.Instance.nextButtonAct(true);
     }
