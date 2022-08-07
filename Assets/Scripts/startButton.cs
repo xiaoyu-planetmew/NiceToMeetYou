@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
-public class startButton : MonoBehaviour, IPointerClickHandler
+public class startButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject logo;
     public Sprite start2;
@@ -54,6 +54,7 @@ public class startButton : MonoBehaviour, IPointerClickHandler
         }));
         SoundManager.Instance.playSFX(0);
         this.GetComponent<startButton>().enabled = false;
+        MouseSet.Instance.mouseChange(false);
     }
     void startSequence()
     {
@@ -62,5 +63,12 @@ public class startButton : MonoBehaviour, IPointerClickHandler
             this.GetComponent<Animator>().SetTrigger("start");
         });
     }
-    
+    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
+    {
+        MouseSet.Instance.mouseChange(true);
+    }
+    void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
+    {
+        MouseSet.Instance.mouseChange(false);
+    }
 }

@@ -34,19 +34,19 @@ public class magic : MonoBehaviour
         DialogSys.Instance.nextButtonAct(false);
         point.SetActive(true);
         point.GetComponent<Image>().DOFade(1, 2).OnComplete(() => {
-            
+            StartCoroutine(magicAppearDelay1());
         });
     }
     IEnumerator magicAppearDelay1()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         DialogSys.Instance.dialogNext();
         StartCoroutine(magicAppearDelay());
     }
     IEnumerator magicAppearDelay()
     {
         yield return new WaitForSeconds(3f);
-        DialogSys.Instance.dialogNext();
+        //DialogSys.Instance.dialogNext();
         zhishi.SetActive(true);
         zhishi.GetComponent<Animator>().SetTrigger("appear");
         button.SetActive(true);

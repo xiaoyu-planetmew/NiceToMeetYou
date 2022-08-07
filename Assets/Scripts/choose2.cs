@@ -90,10 +90,12 @@ public class choose2 : MonoBehaviour
                 return;
             }
         }
+        DialogSys.Instance.dialogDisappear();
             foreach (GameObject obj in buttons)
             {
                 obj.GetComponent<Button>().enabled = false;
-                foreach (var ani in anis)
+                obj.GetComponent<choose1Button>().enabled = false;
+            foreach (var ani in anis)
                 {
                     ani.GetComponent<Image>().DOFade(0, 2);
                 }
@@ -107,6 +109,7 @@ public class choose2 : MonoBehaviour
                     for (int i = 0; i < actObjs.Count; i++)
                     {
                         actObjs[i].SetActive(true);
+                        actObjs[i].GetComponent<choose1Button>().enabled = false;
                         actObjs[i].transform.position = locations[i].transform.position;
                         actObjs[i].GetComponent<choose2Button>().ani.transform.position = locations[i].transform.position;
                         actObjs[i].GetComponent<choose2Button>().enabled = false;
@@ -156,11 +159,13 @@ public class choose2 : MonoBehaviour
         snap.SetActive(true);
         snap.GetComponent<Image>().DOFade(1, 2).OnComplete(() => {
             snap.GetComponent<Button>().enabled = true;
+            snap.GetComponent<choose1Button>().enabled = true;
         });
     }
     public void snapButton()
     {
         snap.GetComponent<Button>().enabled = false;
+
         SoundManager.Instance.playSFX(15);
         StartCoroutine(snapButtonDelay());
         foreach(var obj in actObjs)
