@@ -83,11 +83,19 @@ public class allAni : MonoBehaviour
         this.transform.parent.gameObject.SetActive(true);
         this.gameObject.SetActive(true);
         //this.GetComponent<Animator>().speed = 0;
-        for (int i = 0; i < 4; i++)
-        {
-            this.transform.parent.GetChild(i).gameObject.GetComponent<Image>().DOFade(1, 2f);
-        }
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    this.transform.parent.GetChild(i).gameObject.GetComponent<Image>().DOFade(1, 2f);
+        //}
         this.transform.parent.GetChild(5).gameObject.GetComponent<Image>().DOFade(1, 2f);
+        Sequence quence = DOTween.Sequence();
+        quence.Append(this.transform.parent.GetChild(3).gameObject.GetComponent<Image>().DOFade(1, 2f));
+        //quence.AppendInterval(2);
+        quence.Append(this.transform.parent.GetChild(1).gameObject.GetComponent<Image>().DOFade(1, 2f));
+        //quence.AppendInterval(2);
+        quence.Append(this.transform.parent.GetChild(2).gameObject.GetComponent<Image>().DOFade(1, 2f));
+        //quence.AppendInterval(2);
+        quence.Append(this.transform.parent.GetChild(0).gameObject.GetComponent<Image>().DOFade(1, 2f));
         allAniAppear();
     }
     public void allAniDelay()

@@ -47,7 +47,8 @@ public class choose2 : MonoBehaviour
     {
         
         this.gameObject.SetActive(true);
-        foreach(var ani in anis)
+        StartCoroutine(dialogDelay());
+        foreach (var ani in anis)
         {
             ani.gameObject.GetComponent<Image>().DOFade(1, 2);
         }
@@ -55,10 +56,11 @@ public class choose2 : MonoBehaviour
         {
             b.gameObject.GetComponent<Image>().DOFade(1, 2);
         }
-        queren.gameObject.GetComponent<Image>().DOFade(1, 3).OnComplete(() => {
+        queren.gameObject.GetComponent<Image>().DOFade(1, 4.2f).OnComplete(() => {
             //Debug.Log("1");
             DialogSys.Instance.dialogNext();
             queren.gameObject.GetComponent<Button>().enabled = true;
+            queren.gameObject.GetComponent<choose1Button>().enabled = true;
         });
     }
     public void buttonPressed(GameObject obj)
@@ -150,7 +152,7 @@ public class choose2 : MonoBehaviour
     IEnumerator dialogDelay()
     {
         yield return new WaitForSeconds(2f);
-        Debug.Log("2");
+        //Debug.Log("2");
         DialogSys.Instance.dialogNext();
     }
     IEnumerator snapAppear()

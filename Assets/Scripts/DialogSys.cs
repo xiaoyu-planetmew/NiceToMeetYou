@@ -138,6 +138,7 @@ public class DialogSys : MonoBehaviour
                 //StartCoroutine(SetText());
                 SetText();
                 textBackground.gameObject.SetActive(true);
+                Debug.Log("next");
             }
         }
     }
@@ -156,6 +157,7 @@ public class DialogSys : MonoBehaviour
         //textLabelcn.gameObject.SetActive(false);
         //textLabelen.gameObject.SetActive(false);
         isTalking = false;
+        Debug.Log("finish");
         //afterDialogEvents[eventNum].Invoke();
     }
     public void dialogDisappear()
@@ -328,7 +330,7 @@ public class DialogSys : MonoBehaviour
         {
             index = index + 1;
             textFinished = true;
-            Debug.Log("1");
+            Debug.Log("set");
         });
     }
     /*

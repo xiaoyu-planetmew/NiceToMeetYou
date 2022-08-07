@@ -3170,7 +3170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 234, y: -269}
+  m_AnchoredPosition: {x: 171, y: -329}
   m_SizeDelta: {x: 417, y: 279}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &370647040
@@ -3382,7 +3382,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389676037}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e66dfb8e90d64149913e90cfa1b24fb, type: 3}
   m_Name: 
@@ -4727,7 +4727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -255, y: -171}
+  m_AnchoredPosition: {x: -318, y: -231}
   m_SizeDelta: {x: 522, y: 334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &603788357
@@ -7122,7 +7122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: 158}
+  m_AnchoredPosition: {x: -242, y: 98}
   m_SizeDelta: {x: 405, y: 313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &873557668
@@ -9694,7 +9694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 32, y: 32}
   m_SizeDelta: {x: 699, y: 574}
   m_Pivot: {x: 1, y: 1}
 --- !u!95 &1094643832
@@ -9885,7 +9885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 327, y: 113}
+  m_AnchoredPosition: {x: 264, y: 53}
   m_SizeDelta: {x: 657, y: 501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1106520865
@@ -10496,18 +10496,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1067014030}
-        m_TargetAssemblyTypeName: DialogSys, Assembly-CSharp
-        m_MethodName: dialogFinish
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   afterEvent2:
     m_PersistentCalls:
       m_Calls:
@@ -10789,7 +10777,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 19c67569fc2eb834691534c4eb1f315c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11915,10 +11903,10 @@ MonoBehaviour:
   - 1
   - 1
   - 1
-  - 0.1
-  - 0.1
-  - 0.1
-  - 0.1
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
   - 1
   SFX: {fileID: 1644442091}
   BGMs: []
@@ -15359,7 +15347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 61, y: -40}
+  m_AnchoredPosition: {x: -2, y: -100}
   m_SizeDelta: {x: 1161, y: 767}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859435372
@@ -15561,9 +15549,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 497781780}
-        m_TargetAssemblyTypeName: choose2, Assembly-CSharp
-        m_MethodName: choose2Act
+      - m_Target: {fileID: 121213304}
+        m_TargetAssemblyTypeName: allAni, Assembly-CSharp
+        m_MethodName: allAniStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

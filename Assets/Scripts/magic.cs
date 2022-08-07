@@ -46,7 +46,7 @@ public class magic : MonoBehaviour
     IEnumerator magicAppearDelay()
     {
         yield return new WaitForSeconds(3f);
-        //DialogSys.Instance.dialogNext();
+        DialogSys.Instance.dialogNext();
         zhishi.SetActive(true);
         zhishi.GetComponent<Animator>().SetTrigger("appear");
         button.SetActive(true);
@@ -194,7 +194,7 @@ public class magic : MonoBehaviour
     }
     IEnumerator countDownDelay()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         countDown.GetComponent<Animator>().enabled = true;
     }
     public void countDownAppear()
@@ -215,7 +215,7 @@ public class magic : MonoBehaviour
     }
     IEnumerator flowerDelay()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         DialogSys.Instance.dialogStart(32);
         DialogSys.Instance.nextButtonAct(true);
     }
