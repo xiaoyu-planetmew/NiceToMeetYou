@@ -37,6 +37,8 @@ public class tiezhi2 : MonoBehaviour
         //start = true;
         this.gameObject.SetActive(true);
         tagShow();
+        DialogSys.Instance.dialogStart(18);
+        DialogSys.Instance.nextButtonAct(false);
     }
     public void tagShow()
     {
@@ -71,7 +73,7 @@ public class tiezhi2 : MonoBehaviour
         DialogSys.Instance.dialogFinish();
         dikuang.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
             DialogSys.Instance.meditationAppear();
-            DialogSys.Instance.dialogStart(18);
+            DialogSys.Instance.dialogStart(19);
             DialogSys.Instance.nextButton.SetActive(true);
             DialogSys.Instance.nextButtonAct(true);
             this.gameObject.SetActive(false);

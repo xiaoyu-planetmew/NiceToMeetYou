@@ -25,6 +25,7 @@ public class WeatherChoose : MonoBehaviour
     public bool day;
     public int weather;
     public GameObject meditation;
+    public bool selected = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,37 +35,46 @@ public class WeatherChoose : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(day)
+        if (selected)
         {
-            baitian.GetComponent<Image>().sprite = baitian2;
-            heiye.GetComponent<Image>().sprite = heiye1;
+            if (day)
+            {
+                baitian.GetComponent<Image>().sprite = baitian2;
+                heiye.GetComponent<Image>().sprite = heiye1;
+            }
+            else
+            {
+                baitian.GetComponent<Image>().sprite = baitian1;
+                heiye.GetComponent<Image>().sprite = heiye2;
+            }
+            if (weather == 1)
+            {
+                qing.GetComponent<Image>().sprite = qing2;
+                yin.GetComponent<Image>().sprite = yin1;
+                yu.GetComponent<Image>().sprite = yu1;
+            }
+            if (weather == 2)
+            {
+                qing.GetComponent<Image>().sprite = qing1;
+                yin.GetComponent<Image>().sprite = yin2;
+                yu.GetComponent<Image>().sprite = yu1;
+            }
+            if (weather == 3)
+            {
+                qing.GetComponent<Image>().sprite = qing1;
+                yin.GetComponent<Image>().sprite = yin1;
+                yu.GetComponent<Image>().sprite = yu2;
+            }
         }
         else
         {
             baitian.GetComponent<Image>().sprite = baitian1;
-            heiye.GetComponent<Image>().sprite = heiye2;
-        }
-        if(weather == 1)
-        {
-            qing.GetComponent<Image>().sprite = qing2;
-            yin.GetComponent<Image>().sprite = yin1;
-            yu.GetComponent<Image>().sprite = yu1;
-        }
-        if (weather == 2)
-        {
-            qing.GetComponent<Image>().sprite = qing1;
-            yin.GetComponent<Image>().sprite = yin2;
-            yu.GetComponent<Image>().sprite = yu1;
-        }
-        if (weather == 3)
-        {
-            qing.GetComponent<Image>().sprite = qing1;
-            yin.GetComponent<Image>().sprite = yin1;
-            yu.GetComponent<Image>().sprite = yu2;
+            heiye.GetComponent<Image>().sprite = heiye1;
         }
     }
     public void dayAndNight(bool d)
     {
+        selected = true;
         day = d;
     }
     public void weatherChange(int i)
