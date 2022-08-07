@@ -41,6 +41,7 @@ public class SoundManager : MonoBehaviour
     }
     public void playBGM(int i)
     {
-
+        BGM.GetComponent<AudioSource>().clip = BGMs[i];
+        BGM.GetComponent<AudioSource>().Play();
     }
 }
