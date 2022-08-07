@@ -161,6 +161,7 @@ public class choose2 : MonoBehaviour
     public void snapButton()
     {
         snap.GetComponent<Button>().enabled = false;
+        SoundManager.Instance.playSFX(15);
         StartCoroutine(snapButtonDelay());
         foreach(var obj in actObjs)
         {

@@ -33,10 +33,15 @@ public class magic : MonoBehaviour
         DialogSys.Instance.dialogStart(27);
         DialogSys.Instance.nextButtonAct(false);
         point.SetActive(true);
-        StartCoroutine(magicAppearDelay());
         point.GetComponent<Image>().DOFade(1, 2).OnComplete(() => {
             
         });
+    }
+    IEnumerator magicAppearDelay1()
+    {
+        yield return new WaitForSeconds(2f);
+        DialogSys.Instance.dialogNext();
+        StartCoroutine(magicAppearDelay());
     }
     IEnumerator magicAppearDelay()
     {

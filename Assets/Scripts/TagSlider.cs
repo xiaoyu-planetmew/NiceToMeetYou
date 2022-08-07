@@ -12,6 +12,10 @@ public class TagSlider : MonoBehaviour
     public Slider slider;
     public UnityEvent afterEvent;
     public bool actived = false;
+    public int SFX1;
+    public int SFX2;
+    public bool soundPlayed1 = false;
+    public bool soundPlayed2 = false;
     //public GameObject animAbove;
     // Start is called before the first frame update
     void Start()
@@ -28,12 +32,19 @@ public class TagSlider : MonoBehaviour
         {
             if (!actived) afterAnim();
         }
+        if(slider.value >= 0.2f && !soundPlayed1)
+        {
+            soundPlayed1 = true;
+            SoundManager.Instance.playSFX(SFX1);
+        }
     }
     void afterAnim()
     {
         slider.gameObject.SetActive(false);
         anim.enabled = false;
         actived = true;
+
+        SoundManager.Instance.playSFX(SFX2);
         if (afterEvent != null)
         {
             afterEvent.Invoke();

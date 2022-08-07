@@ -36,10 +36,16 @@ public class sill : MonoBehaviour
             weather.GetComponent<WeatherChoose>().appear();
         }
     }
+    public void appear1()
+    {
+        this.GetComponent<Animator>().SetTrigger("appear1");
+        SoundManager.Instance.playSFX(4);
+    }
     public void meditationDisappear()
     {
         meditation.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
             meditation.SetActive(false);
+            appear1();
         });
     }
     public void appear2()
@@ -50,11 +56,13 @@ public class sill : MonoBehaviour
         if (stateinfo.IsName("loop1"))
         {
             this.GetComponent<Animator>().SetTrigger("appear2");
+            SoundManager.Instance.playSFX(5, true);
         }
         
     }
     public void Disappear()
     {
         this.GetComponent<Animator>().SetTrigger("disappear");
+        SoundManager.Instance.playSFX(6);
     }
 }

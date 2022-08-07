@@ -44,6 +44,7 @@ public class choose2Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
         inButton = true;
+        SoundManager.Instance.playSFX(2);
     }
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
     {
@@ -52,5 +53,6 @@ public class choose2Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
         this.transform.parent.gameObject.GetComponent<choose2>().buttonPressed(this.gameObject);
+        SoundManager.Instance.playSFX(3);
     }
 }

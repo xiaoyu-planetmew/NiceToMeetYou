@@ -86,6 +86,7 @@ public class tiezhi : MonoBehaviour
         meditation.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
             meditation.SetActive(false);
         });
+        this.gameObject.SetActive(true);
         this.gameObject.GetComponent<Image>().DOFade(1, 2);
         tag1Ani.GetComponent<Image>().DOFade(1, 2).OnComplete(() =>
         {

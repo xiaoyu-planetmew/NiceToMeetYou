@@ -52,6 +52,7 @@ public class startButton : MonoBehaviour, IPointerClickHandler
             this.gameObject.SetActive(false);
             meditation.SetActive(true);
         }));
+        SoundManager.Instance.playSFX(0);
         this.GetComponent<startButton>().enabled = false;
     }
     void startSequence()
