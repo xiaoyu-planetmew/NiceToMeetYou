@@ -65,17 +65,21 @@ public class allAni : MonoBehaviour
         this.GetComponent<Animator>().runtimeAnimatorController = null;
         this.GetComponent<Image>().sprite = lastFrames[nowAni];
         this.GetComponent<Animator>().speed = 0;
-        for(int i=0; i<=5; i++)
+        SoundManager.Instance.BGMEnd();
+        for(int i=0; i<5; i++)
         {
             var obj = staff.transform.GetChild(i);
-            obj.GetComponent<Image>().DOFade(0, 3).OnComplete(() => {
+            obj.GetComponent<Image>().DOFade(0, 5).OnComplete(() => {
                 obj.gameObject.SetActive(false);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             });
         }
+        staff.transform.GetChild(5).GetComponent<Image>().DOFade(0, 5).OnComplete(() => {
+            staff.transform.GetChild(5).gameObject.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        });
         //this.transform.parent.GetChild(6).gameObject.SetActive(true);
         //this.transform.parent.GetChild(6).gameObject.GetComponent<Image>().DOFade(1, 2f).OnComplete(() => {
-            
+
         //});
     }
     public void allAniStart()

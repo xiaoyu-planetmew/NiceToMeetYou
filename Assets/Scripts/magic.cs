@@ -174,6 +174,7 @@ public class magic : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         setToReact2();
         point.GetComponent<Animator>().SetTrigger("react2Appear");
+        SoundManager.Instance.playSFX(4);
         DialogSys.Instance.dialogStart(30);
     }
     IEnumerator react3AppearDelay()
