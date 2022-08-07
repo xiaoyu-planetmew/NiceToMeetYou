@@ -12133,7 +12133,7 @@ MonoBehaviour:
   BGM1: {fileID: 1803825583}
   BGM1Volume: 0.3
   BGM2: {fileID: 1664799792}
-  BGM2Volume: 0.3
+  BGM2Volume: 0.5
 --- !u!1 &1463381357
 GameObject:
   m_ObjectHideFlags: 0
