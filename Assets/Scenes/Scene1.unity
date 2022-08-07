@@ -11998,7 +11998,7 @@ MonoBehaviour:
   SFXs:
   - {fileID: 8300000, guid: 3598deed2b4b6934497f71f44a0a6622, type: 3}
   - {fileID: 8300000, guid: 19c67569fc2eb834691534c4eb1f315c, type: 3}
-  - {fileID: 8300000, guid: 2c7902f439db9fa49a34c3bbd13ef7e4, type: 3}
+  - {fileID: 8300000, guid: c0a9d04d16e8e0c4eab378c99dc0eef9, type: 3}
   - {fileID: 8300000, guid: 7d810fa29f1ac424baaa4458f391b667, type: 3}
   - {fileID: 8300000, guid: a2b0cd695aae17b4fa275e3e76c1d73c, type: 3}
   - {fileID: 8300000, guid: 97593699b33a61a45bf13240b9ead728, type: 3}
@@ -15853,9 +15853,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 497781780}
-        m_TargetAssemblyTypeName: choose2, Assembly-CSharp
-        m_MethodName: choose2Act
+      - m_Target: {fileID: 1187188407}
+        m_TargetAssemblyTypeName: magic, Assembly-CSharp
+        m_MethodName: magicAppear
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
