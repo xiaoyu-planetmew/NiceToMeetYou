@@ -30,6 +30,7 @@ public class magic : MonoBehaviour
     public void magicAppear()
     {
         this.gameObject.SetActive(true);
+        DialogSys.Instance.dialogFinish();
         DialogSys.Instance.dialogStart(27);
         DialogSys.Instance.nextButtonAct(false);
         point.SetActive(true);
@@ -47,6 +48,7 @@ public class magic : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         DialogSys.Instance.dialogNext();
+        SoundManager.Instance.BGMEnd();
         zhishi.SetActive(true);
         zhishi.GetComponent<Animator>().SetTrigger("appear");
         button.SetActive(true);
@@ -210,6 +212,7 @@ public class magic : MonoBehaviour
         yield return new WaitForSeconds(5.25f);
         countDown.SetActive(false);
         setToFlower();
+        SoundManager.Instance.playBGM(1);
         point.GetComponent<Animator>().SetTrigger("flower");
         StartCoroutine(flowerDelay());
     }

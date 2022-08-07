@@ -11,6 +11,10 @@ public class SoundManager : MonoBehaviour
     public List<AudioClip> BGMs = new List<AudioClip>();
     public List<float> BGMVolume = new List<float>();
     public GameObject BGM;
+    public GameObject BGM1;
+    public float BGM1Volume;
+    public GameObject BGM2;
+    public float BGM2Volume;
     private void Awake()
     {
         Instance = this;
@@ -41,7 +45,40 @@ public class SoundManager : MonoBehaviour
     }
     public void playBGM(int i)
     {
+        StartCoroutine(playBGMDelay(i));        
+    }
+    IEnumerator playBGMDelay(int i)
+    {
+        BGM2.GetComponent<MusicFade>().FadeMusic(0, 1);
+        BGM.GetComponent<MusicFade>().FadeMusic(0, 1);
+        yield return new WaitForSeconds(1);
+        BGM1.GetComponent<AudioSource>().Stop();
+        BGM2.GetComponent<AudioSource>().Stop();
+        BGM.GetComponent<AudioSource>().Stop();
+        BGM.GetComponent<AudioSource>().loop = true;
         BGM.GetComponent<AudioSource>().clip = BGMs[i];
         BGM.GetComponent<AudioSource>().Play();
+        BGM.GetComponent<MusicFade>().FadeMusic(BGMVolume[i], 1);
+    }
+    public void doubleBGMStart()
+    {
+        BGM1.GetComponent<AudioSource>().Play();
+        BGM1.GetComponent<AudioSource>().volume = BGM1Volume;
+        BGM2.GetComponent<AudioSource>().Play();
+        BGM2.GetComponent<AudioSource>().volume = 0;
+    }
+    public void BGMEnd()
+    {
+        BGM.GetComponent<MusicFade>().FadeMusic(0, 5);
+    }
+    public void doubleBGMEnd()
+    {
+        //BGM1.GetComponent<MusicFade>().FadeMusic(0, 1);
+        BGM2.GetComponent<MusicFade>().FadeMusic(0, 5);
+    }
+    public void BGMChange()
+    {
+        BGM1.GetComponent<MusicFade>().FadeMusic(0, 1);
+        BGM2.GetComponent<MusicFade>().FadeMusic(BGM2Volume, 1);
     }
 }

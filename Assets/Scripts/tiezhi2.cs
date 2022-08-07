@@ -38,6 +38,7 @@ public class tiezhi2 : MonoBehaviour
         //start = true;
         this.gameObject.SetActive(true);
         SoundManager.Instance.playSFX(8);
+        SoundManager.Instance.BGMChange();
         tagShow();
         DialogSys.Instance.dialogStart(18);
         DialogSys.Instance.nextButtonAct(false);

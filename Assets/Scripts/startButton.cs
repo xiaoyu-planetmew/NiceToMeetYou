@@ -53,6 +53,7 @@ public class startButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
             meditation.SetActive(true);
         }));
         SoundManager.Instance.playSFX(0);
+        SoundManager.Instance.doubleBGMStart();
         this.GetComponent<startButton>().enabled = false;
         MouseSet.Instance.mouseChange(false);
     }

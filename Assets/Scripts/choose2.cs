@@ -62,6 +62,7 @@ public class choose2 : MonoBehaviour
             queren.gameObject.GetComponent<Button>().enabled = true;
             queren.gameObject.GetComponent<choose1Button>().enabled = true;
         });
+        SoundManager.Instance.doubleBGMEnd();
     }
     public void buttonPressed(GameObject obj)
     {
@@ -167,7 +168,7 @@ public class choose2 : MonoBehaviour
     public void snapButton()
     {
         snap.GetComponent<Button>().enabled = false;
-
+        SoundManager.Instance.playBGM(0);
         SoundManager.Instance.playSFX(15);
         StartCoroutine(snapButtonDelay());
         foreach(var obj in actObjs)
@@ -196,7 +197,7 @@ public class choose2 : MonoBehaviour
     }
     IEnumerator finishButtonDelay()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(8f);
         finishButton.SetActive(true);
     }
     public void choose2Disappear()
@@ -221,9 +222,12 @@ public class choose2 : MonoBehaviour
         {
             finishButton.SetActive(false);
             //DialogSys.Instance.textLabel.GetComponent<Text>().color = new Color32(255, 255, 255, 255);
-            DialogSys.Instance.dialogFinish();
+            //DialogSys.Instance.dialogFinish();
             this.gameObject.SetActive(false);
-            DialogSys.Instance.afterDialogEvents[25].Invoke();
+            //DialogSys.Instance.afterDialogEvents[25].Invoke();
+            DialogSys.Instance.meditationAppear();
+            DialogSys.Instance.dialogStart(26);
+            DialogSys.Instance.nextButtonAct(true);
         });
     }
     public bool CustomContains(List<GameObject> list, GameObject t)
