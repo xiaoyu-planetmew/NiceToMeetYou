@@ -63,6 +63,6 @@ public class sill : MonoBehaviour
     public void Disappear()
     {
         this.GetComponent<Animator>().SetTrigger("disappear");
-        SoundManager.Instance.playSFX(6);
+        SoundManager.Instance.rainEnd();
     }
 }

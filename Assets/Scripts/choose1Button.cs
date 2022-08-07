@@ -50,4 +50,8 @@ public class choose1Button : MonoBehaviour, IPointerEnterHandler, IPointerClickH
     {
         MouseSet.Instance.mouseChange(false);
     }
+    public void playSFX(int i)
+    {
+        SoundManager.Instance.playSFX(i);
+    }
 }

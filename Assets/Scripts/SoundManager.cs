@@ -43,6 +43,10 @@ public class SoundManager : MonoBehaviour
         SFX.GetComponent<AudioSource>().PlayOneShot(SFXs[i]);
         SFX.GetComponent<AudioSource>().volume = SFXVolume[i];
     }
+    public void rainEnd()
+    {
+        SFX.GetComponent<MusicFade>().FadeMusic(0, 2);
+    }
     public void playBGM(int i)
     {
         StartCoroutine(playBGMDelay(i));        
@@ -55,7 +59,14 @@ public class SoundManager : MonoBehaviour
         BGM1.GetComponent<AudioSource>().Stop();
         BGM2.GetComponent<AudioSource>().Stop();
         BGM.GetComponent<AudioSource>().Stop();
-        BGM.GetComponent<AudioSource>().loop = true;
+        if(i == 0)
+        {
+            BGM.GetComponent<AudioSource>().loop = true;
+        }
+        if(i == 1)
+        {
+            BGM.GetComponent<AudioSource>().loop = false;
+        }
         BGM.GetComponent<AudioSource>().clip = BGMs[i];
         BGM.GetComponent<AudioSource>().Play();
         BGM.GetComponent<MusicFade>().FadeMusic(BGMVolume[i], 1);
