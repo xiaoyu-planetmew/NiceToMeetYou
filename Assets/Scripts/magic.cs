@@ -212,7 +212,7 @@ public class magic : MonoBehaviour
         yield return new WaitForSeconds(5.25f);
         countDown.SetActive(false);
         setToFlower();
-        SoundManager.Instance.playSFX(17);
+        SoundManager.Instance.playSFX(20);
         SoundManager.Instance.playBGM(1);
         point.GetComponent<Animator>().SetTrigger("flower");
         StartCoroutine(flowerDelay());

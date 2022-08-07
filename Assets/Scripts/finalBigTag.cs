@@ -28,7 +28,7 @@ public class finalBigTag : MonoBehaviour
         if(index == 7)
         {
             this.GetComponent<Button>().enabled = false;
-            SoundManager.Instance.playSFX(18);
+            SoundManager.Instance.playSFX(21);
             for (int i=0; i<6; i++)
             {
                 tagImages[i].gameObject.GetComponent<Image>().DOFade(0, 2);
@@ -44,7 +44,7 @@ public class finalBigTag : MonoBehaviour
         this.GetComponent<Button>().enabled = false;
         DialogSys.Instance.dialogNext();
         tagImages[index].SetActive(true);
-        int r = Random.Range(7, 11);
+        int r = Random.Range(16, 20);
         SoundManager.Instance.playSFX(r);
         tagImages[index].gameObject.GetComponent<Image>().DOFade(1, 2).OnComplete(() => { 
             if(index == 0 || index == 2 || index == 4)

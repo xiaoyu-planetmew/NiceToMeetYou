@@ -1862,13 +1862,25 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 188554044}
-        m_TargetAssemblyTypeName: choose1Button, Assembly-CSharp
+        m_TargetAssemblyTypeName: tiezhi2Button, Assembly-CSharp
         m_MethodName: playSFX
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 18
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 188554044}
+        m_TargetAssemblyTypeName: tiezhi2Button, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1920,10 +1932,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 188554039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e66dfb8e90d64149913e90cfa1b24fb, type: 3}
+  m_Script: {fileID: 11500000, guid: b7eb7d9406776fb4b9103a0a5af264f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundActive: 0
 --- !u!1 &240690296
 GameObject:
   m_ObjectHideFlags: 0
@@ -3500,14 +3511,14 @@ MonoBehaviour:
         m_MethodName: buttonAct
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 370647038}
+          m_ObjectArgument: {fileID: 873557666}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 188554039}
+      - m_Target: {fileID: 400625384}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -3526,7 +3537,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 13
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3556,13 +3567,25 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 400625389}
-        m_TargetAssemblyTypeName: choose1Button, Assembly-CSharp
+        m_TargetAssemblyTypeName: tiezhi2Button, Assembly-CSharp
         m_MethodName: playSFX
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 17
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 400625389}
+        m_TargetAssemblyTypeName: tiezhi2Button, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3614,10 +3637,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 400625384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e66dfb8e90d64149913e90cfa1b24fb, type: 3}
+  m_Script: {fileID: 11500000, guid: b7eb7d9406776fb4b9103a0a5af264f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundActive: 0
 --- !u!1 &401401646
 GameObject:
   m_ObjectHideFlags: 0
@@ -9403,14 +9425,14 @@ MonoBehaviour:
         m_MethodName: buttonAct
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 370647038}
+          m_ObjectArgument: {fileID: 603788355}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 188554039}
+      - m_Target: {fileID: 1068499112}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -9429,7 +9451,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 15
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9459,13 +9481,25 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1068499117}
-        m_TargetAssemblyTypeName: choose1Button, Assembly-CSharp
+        m_TargetAssemblyTypeName: tiezhi2Button, Assembly-CSharp
         m_MethodName: playSFX
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 16
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1068499117}
+        m_TargetAssemblyTypeName: tiezhi2Button, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9517,10 +9551,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1068499112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e66dfb8e90d64149913e90cfa1b24fb, type: 3}
+  m_Script: {fileID: 11500000, guid: b7eb7d9406776fb4b9103a0a5af264f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundActive: 0
 --- !u!1001 &1091015362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12048,9 +12081,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 74a5785775a25394bb125eef23eecf8c, type: 3}
   - {fileID: 8300000, guid: d1545a6a5f820d340a16384145bcca26, type: 3}
   - {fileID: 8300000, guid: 3c26027ad721af54183d7fe8e110b40e, type: 3}
-  - {fileID: 8300000, guid: 3c26027ad721af54183d7fe8e110b40e, type: 3}
-  - {fileID: 8300000, guid: 3c26027ad721af54183d7fe8e110b40e, type: 3}
-  - {fileID: 8300000, guid: 3c26027ad721af54183d7fe8e110b40e, type: 3}
+  - {fileID: 8300000, guid: e09be250e6c442a4db223d6ba91e32cc, type: 3}
+  - {fileID: 8300000, guid: e04f10d79ebba134985e85b58e5393a8, type: 3}
+  - {fileID: 8300000, guid: f1c8c4b77fe4ac5489de816d95682c99, type: 3}
+  - {fileID: 8300000, guid: 715cd41e88e1b0147ba3c8290f55dbb6, type: 3}
+  - {fileID: 8300000, guid: 06eb59ad3e7f005438666d929b485a0e, type: 3}
+  - {fileID: 8300000, guid: 715cd41e88e1b0147ba3c8290f55dbb6, type: 3}
   SFXVolume:
   - 1
   - 1
@@ -12068,7 +12104,10 @@ MonoBehaviour:
   - 0.3
   - 0.3
   - 1
-  - 1
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
   - 1
   - 1
   SFX: {fileID: 1644442091}
@@ -14974,14 +15013,14 @@ MonoBehaviour:
         m_MethodName: buttonAct
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 370647038}
+          m_ObjectArgument: {fileID: 1106520863}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 188554039}
+      - m_Target: {fileID: 1727479250}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -15000,7 +15039,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 14
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15030,13 +15069,25 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1727479255}
-        m_TargetAssemblyTypeName: choose1Button, Assembly-CSharp
+        m_TargetAssemblyTypeName: tiezhi2Button, Assembly-CSharp
         m_MethodName: playSFX
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 19
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1727479255}
+        m_TargetAssemblyTypeName: tiezhi2Button, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15088,10 +15139,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1727479250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e66dfb8e90d64149913e90cfa1b24fb, type: 3}
+  m_Script: {fileID: 11500000, guid: b7eb7d9406776fb4b9103a0a5af264f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundActive: 0
 --- !u!1 &1751679615
 GameObject:
   m_ObjectHideFlags: 0
