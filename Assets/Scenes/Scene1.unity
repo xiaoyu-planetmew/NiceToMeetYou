@@ -12086,7 +12086,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f1c8c4b77fe4ac5489de816d95682c99, type: 3}
   - {fileID: 8300000, guid: 715cd41e88e1b0147ba3c8290f55dbb6, type: 3}
   - {fileID: 8300000, guid: 06eb59ad3e7f005438666d929b485a0e, type: 3}
-  - {fileID: 8300000, guid: 715cd41e88e1b0147ba3c8290f55dbb6, type: 3}
+  - {fileID: 8300000, guid: beeb9d85c2ebbce44be0982f0a18cb63, type: 3}
   SFXVolume:
   - 1
   - 1
@@ -12109,7 +12109,7 @@ MonoBehaviour:
   - 0.3
   - 0.3
   - 1
-  - 1
+  - 0.4
   SFX: {fileID: 1644442091}
   BGMs:
   - {fileID: 8300000, guid: 23555b73823d09a42abf3fe753a9d36e, type: 3}
@@ -12119,9 +12119,9 @@ MonoBehaviour:
   - 0.15
   BGM: {fileID: 701228430}
   BGM1: {fileID: 1803825583}
-  BGM1Volume: 0.15
+  BGM1Volume: 0.3
   BGM2: {fileID: 1664799792}
-  BGM2Volume: 0.15
+  BGM2Volume: 0.3
 --- !u!1 &1463381357
 GameObject:
   m_ObjectHideFlags: 0
