@@ -68,13 +68,14 @@ public class allAni : MonoBehaviour
         for(int i=0; i<=5; i++)
         {
             var obj = staff.transform.GetChild(i);
-            obj.GetComponent<Image>().DOFade(0, 2).OnComplete(() => {
+            obj.GetComponent<Image>().DOFade(0, 3).OnComplete(() => {
                 obj.gameObject.SetActive(false);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             });
         }
         //this.transform.parent.GetChild(6).gameObject.SetActive(true);
         //this.transform.parent.GetChild(6).gameObject.GetComponent<Image>().DOFade(1, 2f).OnComplete(() => {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
         //});
     }
     public void allAniStart()
