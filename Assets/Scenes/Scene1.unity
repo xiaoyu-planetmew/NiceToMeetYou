@@ -12127,13 +12127,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 23555b73823d09a42abf3fe753a9d36e, type: 3}
   - {fileID: 8300000, guid: e1e71666ed4904d43ad89072878ef840, type: 3}
   BGMVolume:
-  - 0.15
-  - 0.15
+  - 0.5
+  - 0.5
   BGM: {fileID: 701228430}
   BGM1: {fileID: 1803825583}
-  BGM1Volume: 0.7
+  BGM1Volume: 0.5
   BGM2: {fileID: 1664799792}
-  BGM2Volume: 0.7
+  BGM2Volume: 0.5
 --- !u!1 &1463381357
 GameObject:
   m_ObjectHideFlags: 0
