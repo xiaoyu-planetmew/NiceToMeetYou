@@ -22,12 +22,12 @@ public class LanguageManager : MonoBehaviour
     {
 
     }
-    public void SetLanguage(LanguageType l)
+    public void SetLanguage(int l)
     {
-        Language = l;
-        if (l == LanguageType.Chinese) LanguageNum = 0;
-        if (l == LanguageType.English) LanguageNum = 1;
-        if (l == LanguageType.Japanese) LanguageNum = 2;
+        LanguageNum = l;
+        //if (l == LanguageType.Chinese) LanguageNum = 0;
+        //if (l == LanguageType.English) LanguageNum = 1;
+        //if (l == LanguageType.Japanese) LanguageNum = 2;
     }
     public enum LanguageType
     {

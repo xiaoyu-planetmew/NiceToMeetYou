@@ -16,12 +16,14 @@ public class ButtonLanguage : MonoBehaviour
         {
             this.GetComponent<Text>().text = strCN;
             this.GetComponent<Text>().font = FontCN;
+            this.GetComponent<Text>().fontSize = 56;
         }
         ;
         if (LanguageManager.Instance.LanguageNum == 2)
         {
             this.GetComponent<Text>().text = strJP;
             this.GetComponent<Text>().font = FontJP;
+            this.GetComponent<Text>().fontSize = 50;
         };
     }
 

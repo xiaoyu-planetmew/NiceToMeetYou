@@ -20,6 +20,8 @@ public class DialogSys : MonoBehaviour
     public List<TextAsset> textfilesCN = new List<TextAsset>();
     public List<TextAsset> textfilesEN = new List<TextAsset>();
     public List<TextAsset> textfilesJP = new List<TextAsset>();
+    public Font fontCN;
+    public Font fontJP;
     //public GameObject sceneTransButton;
     public List<TextAsset> textfiles = new List<TextAsset>();
     public List<UnityEvent> afterDialogEvents = new List<UnityEvent>();
@@ -56,6 +58,9 @@ public class DialogSys : MonoBehaviour
                 if (LanguageManager.Instance.LanguageNum == 0) textfiles.Add(textfilesCN[i]);
                 if (LanguageManager.Instance.LanguageNum == 1) textfiles.Add(textfilesEN[i]);
                 if (LanguageManager.Instance.LanguageNum == 2) textfiles.Add(textfilesJP[i]);
+                if (LanguageManager.Instance.LanguageNum == 0) textLabel.GetComponent<Text>().font = fontCN;
+                //if (LanguageManager.Instance.LanguageNum == 1) textfiles.Add(textfilesEN[i]);
+                if (LanguageManager.Instance.LanguageNum == 2) textLabel.GetComponent<Text>().font = fontJP;
             }
         }
         else
@@ -66,6 +71,29 @@ public class DialogSys : MonoBehaviour
             }
         }
         //firstMeet = true;        
+    }
+    public void changeLanguage()
+    {
+        textfiles.Clear();
+        if (GameObject.Find("Manager").GetComponent<LanguageManager>())
+        {
+            for (int i = 0; i < textfilesCN.Count; i++)
+            {
+                if (LanguageManager.Instance.LanguageNum == 0) textfiles.Add(textfilesCN[i]);
+                if (LanguageManager.Instance.LanguageNum == 1) textfiles.Add(textfilesEN[i]);
+                if (LanguageManager.Instance.LanguageNum == 2) textfiles.Add(textfilesJP[i]);
+                if (LanguageManager.Instance.LanguageNum == 0) textLabel.GetComponent<Text>().font = fontCN;
+                //if (LanguageManager.Instance.LanguageNum == 1) textfiles.Add(textfilesEN[i]);
+                if (LanguageManager.Instance.LanguageNum == 2) textLabel.GetComponent<Text>().font = fontJP;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < textfilesCN.Count; i++)
+            {
+                textfiles.Add(textfilesCN[i]);
+            }
+        }
     }
     // Update is called once per frame
     void Update()
