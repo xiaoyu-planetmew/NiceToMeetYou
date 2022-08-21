@@ -58,9 +58,19 @@ public class DialogSys : MonoBehaviour
                 if (LanguageManager.Instance.LanguageNum == 0) textfiles.Add(textfilesCN[i]);
                 if (LanguageManager.Instance.LanguageNum == 1) textfiles.Add(textfilesEN[i]);
                 if (LanguageManager.Instance.LanguageNum == 2) textfiles.Add(textfilesJP[i]);
-                if (LanguageManager.Instance.LanguageNum == 0) textLabel.GetComponent<Text>().font = fontCN;
+                if (LanguageManager.Instance.LanguageNum == 0)
+                {
+                    textLabel.GetComponent<Text>().font = fontCN;
+                    textLabel.GetComponent<Text>().fontSize = 64;
+                    textLabelEN.GetComponent<Text>().font = fontCN;
+                }
                 //if (LanguageManager.Instance.LanguageNum == 1) textfiles.Add(textfilesEN[i]);
-                if (LanguageManager.Instance.LanguageNum == 2) textLabel.GetComponent<Text>().font = fontJP;
+                if (LanguageManager.Instance.LanguageNum == 2)
+                {
+                    textLabel.GetComponent<Text>().font = fontJP;
+                    textLabel.GetComponent<Text>().fontSize = 60;
+                    textLabelEN.GetComponent<Text>().font = fontJP;
+                }
             }
         }
         else
@@ -82,9 +92,19 @@ public class DialogSys : MonoBehaviour
                 if (LanguageManager.Instance.LanguageNum == 0) textfiles.Add(textfilesCN[i]);
                 if (LanguageManager.Instance.LanguageNum == 1) textfiles.Add(textfilesEN[i]);
                 if (LanguageManager.Instance.LanguageNum == 2) textfiles.Add(textfilesJP[i]);
-                if (LanguageManager.Instance.LanguageNum == 0) textLabel.GetComponent<Text>().font = fontCN;
+                if (LanguageManager.Instance.LanguageNum == 0)
+                {
+                    textLabel.GetComponent<Text>().font = fontCN;
+                    textLabel.GetComponent<Text>().fontSize = 64;
+                    textLabelEN.GetComponent<Text>().font = fontCN;
+                }
                 //if (LanguageManager.Instance.LanguageNum == 1) textfiles.Add(textfilesEN[i]);
-                if (LanguageManager.Instance.LanguageNum == 2) textLabel.GetComponent<Text>().font = fontJP;
+                if (LanguageManager.Instance.LanguageNum == 2)
+                {
+                    textLabel.GetComponent<Text>().font = fontJP;
+                    textLabel.GetComponent<Text>().fontSize = 60;
+                    textLabelEN.GetComponent<Text>().font = fontJP;
+                }
             }
         }
         else

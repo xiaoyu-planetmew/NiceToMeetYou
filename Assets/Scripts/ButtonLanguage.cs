@@ -16,6 +16,7 @@ public class ButtonLanguage : MonoBehaviour
         {
             this.GetComponent<Text>().text = strCN;
             this.GetComponent<Text>().font = FontCN;
+            this.transform.parent.GetChild(1).GetComponent<Text>().font = FontCN;
             this.GetComponent<Text>().fontSize = 56;
         }
         ;
@@ -23,6 +24,7 @@ public class ButtonLanguage : MonoBehaviour
         {
             this.GetComponent<Text>().text = strJP;
             this.GetComponent<Text>().font = FontJP;
+            this.transform.parent.GetChild(1).GetComponent<Text>().font = FontJP;
             this.GetComponent<Text>().fontSize = 50;
         };
     }
