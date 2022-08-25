@@ -102,7 +102,7 @@ public class DialogSys : MonoBehaviour
                 if (LanguageManager.Instance.LanguageNum == 2)
                 {
                     textLabel.GetComponent<Text>().font = fontJP;
-                    textLabel.GetComponent<Text>().fontSize = 60;
+                    textLabel.GetComponent<Text>().fontSize = 50;
                     textLabelEN.GetComponent<Text>().font = fontJP;
                 }
             }
