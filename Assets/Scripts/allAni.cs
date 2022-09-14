@@ -66,15 +66,15 @@ public class allAni : MonoBehaviour
         this.GetComponent<Image>().sprite = lastFrames[nowAni];
         this.GetComponent<Animator>().speed = 0;
         SoundManager.Instance.BGMEnd();
-        for(int i=0; i<5; i++)
+        for(int i=0; i<=5; i++)
         {
             var obj = staff.transform.GetChild(i);
             obj.GetComponent<Image>().DOFade(0, 5).OnComplete(() => {
                 obj.gameObject.SetActive(false);
             });
         }
-        staff.transform.GetChild(5).GetComponent<Image>().DOFade(0, 5).OnComplete(() => {
-            staff.transform.GetChild(5).gameObject.SetActive(false);
+        staff.transform.GetChild(6).GetComponent<Image>().DOFade(0, 5).OnComplete(() => {
+            staff.transform.GetChild(6).gameObject.SetActive(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         });
         //this.transform.parent.GetChild(6).gameObject.SetActive(true);
@@ -100,6 +100,7 @@ public class allAni : MonoBehaviour
         quence.Append(this.transform.parent.GetChild(2).gameObject.GetComponent<Image>().DOFade(1, 2f));
         //quence.AppendInterval(2);
         quence.Append(this.transform.parent.GetChild(0).gameObject.GetComponent<Image>().DOFade(1, 2f));
+        quence.Append(this.transform.parent.GetChild(4).gameObject.GetComponent<Image>().DOFade(1, 2f));
         allAniAppear();
     }
     public void allAniDelay()
